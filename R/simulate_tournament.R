@@ -1,5 +1,12 @@
-'unfortunately there are a lot of new additions (teams like Curacao with no previous WC history) to the 2026 WC and a changed group format that makes simulations in the groups quite meaningless - we will preselect the group winners and run the simulation starting in the quarterfinals'
 
+#' Simulate the world cup knock out stages
+#'
+#' @param teams
+#'
+#' @return a list of all the winners and fixtures
+#' @export
+#'
+#' @examples
 simulate_tournament <- function(teams){
   if (length(teams)!= 8){
     stop("must have 8 teams exactly")
