@@ -12,11 +12,14 @@ plot_team_history <- function(team){
     dplyr::mutate(
       date = as.Date(date),
       result = dplyr::case_when(
-        (home_team == team & home_score> away_score)|
-          (away_team == team & away_score > home_score) ~ "Win",
-        home_score = away_score ~ "Draw",
-        TRUE ~ "Loss"
+        !is.na(home_score) & !is.na(away_score) &
+          ((home_team == team & home_score > away_score) |
+             (away_team == team & away_score > home_score)) ~ "Win",
 
+        !is.na(home_score) & !is.na(away_score) &
+          home_score == away_score ~ "Draw",
+
+        TRUE ~ "Loss"
       )
     )
 
