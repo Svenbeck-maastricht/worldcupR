@@ -7,3 +7,10 @@ test_that("simulate_match results are valid results", {
       c("Brazil wins", "Germany wins", "Draw")
   )
 })
+
+test_that("invalid team error", {
+
+  expect_error(
+    simulate_match("NA", "Brazil")
+  )
+})
