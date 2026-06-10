@@ -1,3 +1,11 @@
+#' Team World Cup Summary
+#' Performance at the previous World Cups by team
+#' @param team name
+#'
+#' @return data frame with wins/losses/draws, goals scored/conceded by team
+#' @export
+#'
+#' @examples
 team_summary <- function(team){
   matches <- worldcup_matches %>%
     dplyr::filter(home_team == team | away_team == team)
