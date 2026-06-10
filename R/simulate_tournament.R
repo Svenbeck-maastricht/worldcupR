@@ -29,7 +29,7 @@ simulate_tournament <- function(teams){
 
   #finals
   f <- simulate_match(s1, s2)
-  winner <- ifelse(f$team1_goals, f$team2_goals, f$team1, f$team2)
+  winner <- ifelse(f$team1_goals > f$team2_goals, f$team1, f$team2)
 
   list(
     quarters = list(qf1, qf2, qf3, qf4),
