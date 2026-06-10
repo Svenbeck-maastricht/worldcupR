@@ -6,6 +6,7 @@
 #' @export
 #'
 #' @examples
+
 team_summary <- function(team){
   matches <- worldcup_matches %>%
     dplyr::filter(home_team == team | away_team == team)
@@ -33,6 +34,6 @@ team_summary <- function(team){
     losses = losses,
     draws = draws,
     goals_scored = goals_scored,
-    goals_conceded = goals_conceded,
+    goals_conceded = goals_conceded
   )
 }
