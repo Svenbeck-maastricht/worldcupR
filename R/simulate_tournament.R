@@ -6,9 +6,9 @@ simulate_tournament <- function(teams){
   }
   #quarters
   qf1 <- simulate_match(teams[1], teams[2])
-  qf2 <- simulate_match(teams[3], team[4])
-  qf4 <- simulate_match(teams[5], team[6])
-  qf4 <- simulate_match(teams[7], team[8])
+  qf2 <- simulate_match(teams[3], teams[4])
+  qf3 <- simulate_match(teams[5], teams[6])
+  qf4 <- simulate_match(teams[7], teams[8])
 
   w1<- ifelse(qf1$team1_goals > qf1$team2_goals, qf1$team1, qf1$team2)
   w2<- ifelse(qf2$team1_goals > qf2$team2_goals, qf2$team1, qf2$team2)
