@@ -11,3 +11,4 @@ tournament_par <- function(teams){
 
 cl <- makeCluster(3)
 registerDoParallel(cl)
+stopCluster(cl)
