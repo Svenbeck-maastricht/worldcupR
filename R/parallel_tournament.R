@@ -8,7 +8,3 @@ tournament_par <- function(teams){
     simulate_tournament(teams)$champion
   }
 }
-
-cl <- makeCluster(3)
-registerDoParallel(cl)
-stopCluster(cl)
