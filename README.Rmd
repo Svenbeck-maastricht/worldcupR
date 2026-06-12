@@ -69,4 +69,12 @@ For a complete example including parallel simulation, benchmarking, and win prob
 plot_team_history("Brazil")
 ```
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+#Functions
+
+`simulate_match()`: simulates a single match based on historical scoring strength
+`simulate_tournament()`: simulates a single knockout tournament
+`tournament_seq()`: runs 500 simulations sequentially
+`tournament_par()`: runs 500 simulations in parallel
+`team_summary()`: returns historical World Cup stats for a team
+`plot_team_history()`: plots a team's match history
+`plot_win_probability()`: plots bar chart of win probabilities in the sequential MC simulation
