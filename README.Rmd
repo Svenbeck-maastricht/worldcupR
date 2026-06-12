@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The top 8 teams in the world cup are relatively well-known by pundits, but a lot of uncertainty remains as to who will finally lift the trophy. The goal of worldcupR is to simulate a World Cup knockout tournament based on historical match data from previous world cups by focusing on teams' historical scoring strength to predict the outcomes of the upcoming World Cup.
+The top 8 teams in the world cup are relatively well-known to pundits, but a lot of uncertainty remains as to who will finally lift the trophy. The goal of worldcupR is to simulate a World Cup knockout tournament based on historical match data from previous world cups by focusing on teams' historical scoring strength to predict the outcomes of the upcoming World Cup. Simulations are run sequentially and in parallel across 500 runs. Functions to explore and plot a team's historical record and for the final win probability simulated across the 500 runs are made available. Users of the package can switch the teams they would like to simulate in the knockout stages.
 
 ## Installation
 
