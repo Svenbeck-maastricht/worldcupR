@@ -18,14 +18,14 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of worldcupR is to ...
+The goal of worldcupR is to simulate a World Cup knockout tournament based on historical match data from previous world cups by focusing on goals_scored as the core metric of winning
 
 ## Installation
 
 You can install the development version of worldcupR like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+devtools::install_github("Svenbeck-maastricht/worldcupR")
 ```
 
 ## Example
@@ -35,6 +35,16 @@ This is a basic example which shows you how to solve a common problem:
 ```{r example}
 library(worldcupR)
 ## basic example code
+teams <- c("Brazil", "Germany", "France", "Netherlands", "Argentina", "Spain", "England", "Portugal")
+#historical statistic for a team
+team_summary("Brazil")
+#simulate a tournament
+simulate_tournament(teams)$champion
+#run simulations (500) either sequentially or parallel
+winners <- tournament_seq(teams)
+winners <- tournament_par(teams)
+table(winners)
+
 ```
 
 What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
