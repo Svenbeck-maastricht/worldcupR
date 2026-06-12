@@ -48,6 +48,15 @@ winners_par <- tournament_par(teams)
 table(winners_seq)
 table(winners_par)
 
+bench1 <- microbenchmark::microbenchmark(
+  tournament_par(teams),
+  tournament_seq(teams),
+  times =5
+)
+
+#plot the sequential winner probability table
+plot_win_probability(winner_seq)
+
 ```
 
 # Full Analysis
