@@ -6,6 +6,8 @@
 #' @export
 #'
 #' @examples
+#' plot_team_history(Brazil)
+#'
 plot_team_history <- function(team){
   matches <- worldcup_matches %>%
     dplyr::filter (home_team == team | away_team == team) %>%

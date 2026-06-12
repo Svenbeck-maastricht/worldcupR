@@ -1,12 +1,14 @@
 
 #' Simulate the world cup knock out stages
 #'
-#' @param teams
+#' @param teams, character vector of 8 teams
 #'
 #' @return a list of all the winners and fixtures
 #' @export
 #'
 #' @examples
+#' top8_teams <- c("Germany", "Brazil", "Netherlands", "France", "Argentina", "Spain", "England", "Portugal")
+#' simulate_tournament(top8_teams)
 simulate_tournament <- function(teams){
   if (length(teams)!= 8){
     stop("must have 8 teams exactly")

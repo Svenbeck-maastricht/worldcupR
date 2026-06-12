@@ -1,11 +1,12 @@
 #' Team World Cup Summary
 #' Performance at the previous World Cups by team
-#' @param team name
+#' @param team character string of name of the team
 #'
 #' @return data frame with wins/losses/draws, goals scored/conceded by team
 #' @export
 #'
 #' @examples
+#' team_summary("Brazil")
 
 team_summary <- function(team){
   matches <- worldcup_matches %>%
