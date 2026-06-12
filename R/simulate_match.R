@@ -7,6 +7,7 @@
 #' @export
 #'
 #' @examples
+#' simulate_match("Brazil", "Germany")
 simulate_match <- function(team1, team2){
   t1_stats <- team_summary(team1)
   t2_stats <- team_summary(team2)
