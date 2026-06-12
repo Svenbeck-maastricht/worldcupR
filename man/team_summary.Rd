@@ -8,7 +8,7 @@ Performance at the previous World Cups by team}
 team_summary(team)
 }
 \arguments{
-\item{team}{name}
+\item{team}{character string of name of the team}
 }
 \value{
 data frame with wins/losses/draws, goals scored/conceded by team
@@ -16,4 +16,7 @@ data frame with wins/losses/draws, goals scored/conceded by team
 \description{
 Team World Cup Summary
 Performance at the previous World Cups by team
+}
+\examples{
+team_summary("Brazil")
 }

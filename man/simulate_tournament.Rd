@@ -7,11 +7,15 @@
 simulate_tournament(teams)
 }
 \arguments{
-\item{teams}{}
+\item{teams, }{character vector of 8 teams}
 }
 \value{
 a list of all the winners and fixtures
 }
 \description{
 Simulate the world cup knock out stages
+}
+\examples{
+top8_teams <- c("Germany", "Brazil", "Netherlands", "France", "Argentina", "Spain", "England", "Portugal")
+simulate_tournament(top8_teams)
 }

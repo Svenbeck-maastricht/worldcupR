@@ -15,3 +15,7 @@ ggplot
 \description{
 Plot team history at the WC
 }
+\examples{
+plot_team_history(Brazil)
+
+}

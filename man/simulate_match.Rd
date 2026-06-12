@@ -19,3 +19,6 @@ simulated score and result in a data frame
 Simulate Match at the world cup
 the match is simulated based on goal scoring strength in past tournaments on the historical average scoring strength of the team
 }
+\examples{
+simulate_match("Brazil", "Germany")
+}

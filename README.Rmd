@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of worldcupR is to simulate a World Cup knockout tournament based on historical match data from previous world cups by focusing on goals_scored as the core metric of winning
+The top 8 teams in the world cup are relatively well-known by pundits, but a lot of uncertainty remains as to who will finally lift the trophy. The goal of worldcupR is to simulate a World Cup knockout tournament based on historical match data from previous world cups by focusing on teams' historical scoring strength to predict the outcomes of the upcoming World Cup.
 
 ## Installation
 
@@ -34,6 +34,8 @@ This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
 library(worldcupR)
+library(dplyr)
+library(doParallel)
 ## basic example code
 teams <- c("Brazil", "Germany", "France", "Netherlands", "Argentina", "Spain", "England", "Portugal")
 #historical statistic for a team
@@ -47,18 +49,14 @@ table(winners)
 
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+# Full Analysis
 
-```{r cars}
-summary(cars)
-```
+For a complete example including parallel simulation, benchmarking, and win probability plots, see 'worldcup_analysis.R' in the project root
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
+#Plot team history
 
 ```{r pressure, echo = FALSE}
-plot(pressure)
+plot_team_history("Brazil")
 ```
 
 In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
