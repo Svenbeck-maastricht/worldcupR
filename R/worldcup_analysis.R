@@ -38,5 +38,18 @@ stopCluster(cl)
 
 print(bench1)
 
+#create the porbability tables
+table_prob <- prop.table(table(winner_par))
+df_winner <- as.data.frame(table_prob)
 
+#plot the winner probabilities
 
+ggplot(df_winner,
+       aes(x= winner_par, y= Freq, fill=winner_par)) +
+  geom_col() +
+  labs(
+    title="Win Probability",
+    x= "Team",
+    y= "Win probability"
+    ) +
+  theme_minimal()
