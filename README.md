@@ -48,18 +48,38 @@ team_summary("Brazil")
 #> 1 Brazil     114   76     19    19          237            108
 #simulate a tournament
 simulate_tournament(teams)$champion
-#> [1] "Portugal"
+#> [1] "France"
 #run simulations (500) either sequentially or parallel
-winners <- tournament_seq(teams)
-winners <- tournament_par(teams)
+winners_seq <- tournament_seq(teams)
+winners_par <- tournament_par(teams)
 #> Warning: executing %dopar% sequentially: no parallel backend registered
-table(winners)
-#> winners
+table(winners_seq)
+#> winners_seq
 #>   Argentina      Brazil     England      France     Germany Netherlands 
-#>           4          21           5          30         218          72 
+#>           6          25           5          20         231          58 
 #>    Portugal       Spain 
-#>         126          24
+#>         133          22
+table(winners_par)
+#> winners_par
+#>   Argentina      Brazil     England      France     Germany Netherlands 
+#>           3          24           3          34         224          66 
+#>    Portugal       Spain 
+#>         111          35
+
+bench1 <- microbenchmark::microbenchmark(
+  tournament_par(teams),
+  tournament_seq(teams),
+  times =5
+)
+#> Warning in microbenchmark::microbenchmark(tournament_par(teams),
+#> tournament_seq(teams), : less accurate nanosecond times to avoid potential
+#> integer overflows
+
+#plot the sequential winner probability table
+plot_win_probability(winners_seq)
 ```
+
+<img src="man/figures/README-example-1.png" width="100%" />
 
 # Full Analysis
 

@@ -55,7 +55,7 @@ bench1 <- microbenchmark::microbenchmark(
 )
 
 #plot the sequential winner probability table
-plot_win_probability(winner_seq)
+plot_win_probability(winners_seq)
 
 ```
 
