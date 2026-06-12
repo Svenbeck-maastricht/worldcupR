@@ -48,8 +48,10 @@ ggplot(df_winner,
        aes(x= winner_par, y= Freq, fill=winner_par)) +
   geom_col() +
   labs(
-    title="Win Probability",
+    title="Who wins the World Cup 2026?",
+    subtitle= "500 simulated runs",
     x= "Team",
     y= "Win probability"
     ) +
-  theme_minimal()
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
