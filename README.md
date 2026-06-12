@@ -6,12 +6,16 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The top 8 teams in the world cup are relatively well-known by pundits,
+The top 8 teams in the world cup are relatively well-known to pundits,
 but a lot of uncertainty remains as to who will finally lift the trophy.
 The goal of worldcupR is to simulate a World Cup knockout tournament
 based on historical match data from previous world cups by focusing on
 teams’ historical scoring strength to predict the outcomes of the
-upcoming World Cup.
+upcoming World Cup. Simulations are run sequentially and in parallel
+across 500 runs. Functions to explore and plot a team’s historical
+record and for the final win probability simulated across the 500 runs
+are made available. Users of the package can switch the teams they would
+like to simulate in the knockout stages.
 
 ## Installation
 
@@ -48,7 +52,7 @@ team_summary("Brazil")
 #> 1 Brazil     114   76     19    19          237            108
 #simulate a tournament
 simulate_tournament(teams)$champion
-#> [1] "France"
+#> [1] "Germany"
 #run simulations (500) either sequentially or parallel
 winners_seq <- tournament_seq(teams)
 winners_par <- tournament_par(teams)
@@ -56,15 +60,15 @@ winners_par <- tournament_par(teams)
 table(winners_seq)
 #> winners_seq
 #>   Argentina      Brazil     England      France     Germany Netherlands 
-#>           6          25           5          20         231          58 
+#>           4          14           5          30         232          59 
 #>    Portugal       Spain 
-#>         133          22
+#>         129          27
 table(winners_par)
 #> winners_par
 #>   Argentina      Brazil     England      France     Germany Netherlands 
-#>           3          24           3          34         224          66 
+#>           6          20           5          27         211          71 
 #>    Portugal       Spain 
-#>         111          35
+#>         123          37
 
 bench1 <- microbenchmark::microbenchmark(
   tournament_par(teams),
@@ -90,5 +94,12 @@ win probability plots, see ‘worldcup_analysis.R’ in the project root
 
 <img src="man/figures/README-pressure-1.png" width="100%" />
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+\#Functions
+
+`simulate_match()`: simulates a single match based on historical scoring
+strength `simulate_tournament()`: simulates a single knockout tournament
+`tournament_seq()`: runs 500 simulations sequentially
+`tournament_par()`: runs 500 simulations in parallel `team_summary()`:
+returns historical World Cup stats for a team `plot_team_history()`:
+plots a team’s match history `plot_win_probability()`: plots bar chart
+of win probabilities in the sequential MC simulation
