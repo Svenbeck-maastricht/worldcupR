@@ -94,7 +94,7 @@ win probability plots, see ‘worldcup_analysis.R’ in the project root
 
 <img src="man/figures/README-pressure-1.png" width="100%" />
 
-\#Functions
+# Functions
 
 `simulate_match()`: simulates a single match based on historical scoring
 strength `simulate_tournament()`: simulates a single knockout tournament
