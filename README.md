@@ -90,7 +90,7 @@ plot_win_probability(winners_seq)
 For a complete example including parallel simulation, benchmarking, and
 win probability plots, see ‘worldcup_analysis.R’ in the project root
 
-\#Plot team history
+# Plot team history
 
 <img src="man/figures/README-pressure-1.png" width="100%" />
 
