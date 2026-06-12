@@ -43,9 +43,10 @@ team_summary("Brazil")
 #simulate a tournament
 simulate_tournament(teams)$champion
 #run simulations (500) either sequentially or parallel
-winners <- tournament_seq(teams)
-winners <- tournament_par(teams)
-table(winners)
+winners_seq <- tournament_seq(teams)
+winners_par <- tournament_par(teams)
+table(winners_seq)
+table(winners_par)
 
 ```
 
